@@ -1,23 +1,29 @@
 pipeline {
     agent any
 
+    
     stages {
-        stage('Build') {
+        stage('Maven Build') {
             steps {
-                echo 'Building..'
+                echo 'Maven Building..'
             }
         }
-        stage('Test') {
+        stage('Unit Test') {
             steps {
                 echo 'Testing..'
             }
         }
-        stage('autobuild') {
+        stage('Build Image') {
             steps {
                 echo 'auto build docker images..'
             }
         }
-        stage('Deploy') {
+        stage('Push Image') {
+            steps {
+                echo 'Push App images to private registry..'
+            }
+        }
+        stage('Deploy Containers') {
             steps {
                 echo 'Deploying....'
             }
