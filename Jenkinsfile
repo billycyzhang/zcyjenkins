@@ -12,6 +12,11 @@ pipeline {
                 echo 'Testing..'
             }
         }
+        stage('autobuild') {
+            steps {
+                echo 'auto build docker images..'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
